@@ -12,16 +12,18 @@ namespace RPGGame
         private static int boardsize = 50;
         private static List<bool[]> matrix = new List<bool[]>
         {
-            new bool[] { true, true, true, false, true, false, true, true, true, true },
-            new bool[] { true, true, true, false, true, false, true, false, false, true },
-            new bool[] { true, false, false, false, true, false, true, false, false, true },
-            new bool[] { true, true, true, true, true, false, true, true, true, true },
-            new bool[] { false, false, false, false, true, false, false, false, false, true},
-            new bool[] { true, false, true, false, true, true, true, true, false, true },
-            new bool[] { true, false, true, false, true, false, false, true, false, true },
-            new bool[] { true, true, true, true, true, false, false, true, true, true },
-            new bool[] { true, false, false, false, true, true, true, true, false, true },
-            new bool[] { true, true, true, false, true, false, false, true, true, true }
+            new bool[] { false,false,false,false,false,false,false,false,false,false,false,false },
+            new bool[] { false, true, true, true, false, true, false, true, true, true, true, false },
+            new bool[] { false, true, true, true, false, true, false, true, false, false, true, false },
+            new bool[] { false, true, false, false, false, true, false, true, false, false, true, false },
+            new bool[] { false, true, true, true, true, true, false, true, true, true, true, false },
+            new bool[] { false, false, false, false, false, true, false, false, false, false, true, false},
+            new bool[] { false, true, false, true, false, true, true, true, true, false, true, false },
+            new bool[] { false, true, false, true, false, true, false, false, true, false, true, false },
+            new bool[] { false, true, true, true, true, true, false, false, true, true, true, false },
+            new bool[] { false, true, false, false, false, true, true, true, true, false, true, false },
+            new bool[] { false, true, true, true, false, true, false, false, true, true, true, false },
+            new bool[] { false,false,false,false,false,false,false,false,false,false,false,false }
         };
         
         public static void DrawMap(FoxDraw foxDraw)
@@ -44,6 +46,10 @@ namespace RPGGame
                     }
                 }
             }
+        }
+        public static bool IsWalkable()
+        {
+            
         }
         //public static void DrawFloor(FoxDraw foxDraw)
         //{
