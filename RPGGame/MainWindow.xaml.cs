@@ -25,7 +25,35 @@ namespace RPGGame
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            foxDraw.AddImage("./Assets/floor.png", 0, 0);
+            DrawTile();
+
         }
-    }
+        public void DrawTile()
+        {
+            var foxDraw = new FoxDraw(canvas);
+            int y = 0;
+            int x = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                y = i * 50;
+                for (int j = 0; j < 10; j++)
+                {
+                    x = j * 50;
+                    foxDraw.AddImage("./Assets/floor.png", x, y);
+                }
+            }
+        }
+        private void WindowKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                Console.WriteLine("To the left!");
+            }
+
+            if (e.Key == Key.Right)
+            {
+                Console.WriteLine("To the right!");
+            }
+        }
+    } 
 }
