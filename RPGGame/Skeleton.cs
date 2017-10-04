@@ -24,9 +24,21 @@ namespace RPGGame
         }
         public static void PlaceEnemy(FoxDraw foxDraw)
         {
-            foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
-            foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
-            foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
+            int skeletonNumb = 0;
+            do
+            {
+                int x = rnd.Next(1, 11);
+                int y = rnd.Next(1, 11);
+                if (Tile.Matrix[y][x] == true)
+                {
+                    foxDraw.AddImage("./Assets/skeleton.png", x*startingX, y*startingY);
+                    skeletonNumb++;
+                }
+            } while (skeletonNumb < 3);
+
+             //foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
+            //foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
+            //foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
         }
     }
 }
