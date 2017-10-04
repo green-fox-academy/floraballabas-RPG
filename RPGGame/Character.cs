@@ -8,16 +8,16 @@ namespace RPGGame
 {
     class Character
     {
-        protected int currentHP;
-        protected int maxHP;
-        protected int DP;
-        protected int SP;
+        protected double currentHP;
+        protected double maxHP;
+        protected double DP;
+        protected double SP;
         protected bool isDead;
 
         static Random rnd = new Random();
-        protected int d6;
+        protected double d6;
 
-        public int RollDice()
+        public double RollDice()
         {
             d6 = rnd.Next(1, 7);
             return d6;

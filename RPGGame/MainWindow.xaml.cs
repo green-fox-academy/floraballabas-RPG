@@ -27,12 +27,15 @@ namespace RPGGame
             var foxDraw = new FoxDraw(canvas);
             Tile.DrawMap(foxDraw);
             Hero hero = new Hero(foxDraw);
+            Skeleton skeleton = new Skeleton();
+            Skeleton.PlaceEnemy(foxDraw);
         }
         
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {
             var foxDraw = new FoxDraw(canvas);
             Tile.DrawMap(foxDraw);
+            Skeleton.PlaceEnemy(foxDraw);
             if (e.Key == Key.Left)
             {
                 Hero.HeroLeft(foxDraw);
