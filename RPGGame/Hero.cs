@@ -13,10 +13,19 @@ namespace RPGGame
         private static int startingY = 50;
         private static int boardsize = 50;
 
-        public static void PlaceHero(FoxDraw foxDraw)
+        public Hero(FoxDraw foxDraw)
         {
+            this.currentHP = maxHP;
+            this.maxHP = 20 + 3 * RollDice();
+            this.DP = 2 * RollDice();
+            this.SP = 5 * RollDice();
             foxDraw.AddImage("./Assets/hero-down.png", startingX, startingY);
         }
+
+        //public static void PlaceHero(FoxDraw foxDraw)
+        //{
+        //    foxDraw.AddImage("./Assets/hero-down.png", startingX, startingY);
+        //}
         public static void HeroDown(FoxDraw foxDraw)
         {
             if (Tile.Matrix[startingY / boardsize + 1][startingX / boardsize])

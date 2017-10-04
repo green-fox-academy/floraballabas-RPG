@@ -25,10 +25,8 @@ namespace RPGGame
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
-            //Tile.DrawFloor(foxDraw);
-            //Tile.DrawWall(foxDraw);
             Tile.DrawMap(foxDraw);
-            Hero.PlaceHero(foxDraw);
+            Hero hero = new Hero(foxDraw);
         }
         
         private void WindowKeyDown(object sender, KeyEventArgs e)
