@@ -9,6 +9,11 @@ namespace RPGGame
 {
     class Skeleton : Enemy
     {
+        private static int startingX = 50;
+        private static int startingY = 50;
+        private static int boardsize = 50;
+        static Random rnd = new Random();
+
         public Skeleton()
         {
             int x = 1;
@@ -19,7 +24,9 @@ namespace RPGGame
         }
         public static void PlaceEnemy(FoxDraw foxDraw)
         {
-            foxDraw.AddImage("./Assets/skeleton.png", 300, 300);
+            foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
+            foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
+            foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
         }
     }
 }

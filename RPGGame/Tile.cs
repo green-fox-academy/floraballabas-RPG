@@ -54,9 +54,9 @@ namespace RPGGame
                 }
             }
         }
-        //public static bool IsWalkable()
-        //{
-            
-        //}
+        public static void DrawTile(FoxDraw foxDraw, int x, int y)
+        {
+            foxDraw.AddImage("./Assets/floor.png", x, y);
+        }
     }
 }

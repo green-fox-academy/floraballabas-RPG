@@ -30,6 +30,7 @@ namespace RPGGame
         {
             if (Tile.Matrix[startingY / boardsize + 1][startingX / boardsize])
             {
+                Tile.DrawTile(foxDraw, startingX, startingY);
                 startingY += boardsize;
             }
             foxDraw.AddImage("./Assets/hero-down.png", startingX, startingY);
@@ -38,6 +39,7 @@ namespace RPGGame
         {
             if (Tile.Matrix[startingY / boardsize - 1][startingX / boardsize])
             {
+                Tile.DrawTile(foxDraw, startingX, startingY);
                 startingY -= boardsize;
             }
             foxDraw.AddImage("./Assets/hero-up.png", startingX, startingY);
@@ -46,6 +48,7 @@ namespace RPGGame
         {
             if (Tile.Matrix[startingY / boardsize][startingX / boardsize -1])
             {
+                Tile.DrawTile(foxDraw, startingX, startingY);
                 startingX -= boardsize;
             }
             foxDraw.AddImage("./Assets/hero-left.png", startingX, startingY);
@@ -54,6 +57,7 @@ namespace RPGGame
         {
             if (Tile.Matrix[startingY / boardsize][startingX / boardsize + 1])
             {
+                Tile.DrawTile(foxDraw, startingX, startingY);
                 startingX += boardsize;
             }
             foxDraw.AddImage("./Assets/hero-right.png", startingX, startingY);
