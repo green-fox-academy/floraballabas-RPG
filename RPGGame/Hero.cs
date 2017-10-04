@@ -19,23 +19,35 @@ namespace RPGGame
         }
         public static void HeroDown(FoxDraw foxDraw)
         {
-            foxDraw.AddImage("./Assets/hero-down.png", startingX, startingY + boardsize);
-            startingY += boardsize;
+            if (Tile.Matrix[startingY / boardsize + 1][startingX / boardsize])
+            {
+                startingY += boardsize;
+            }
+            foxDraw.AddImage("./Assets/hero-down.png", startingX, startingY);
         }
         public static void HeroUp(FoxDraw foxDraw)
         {
-            foxDraw.AddImage("./Assets/hero-up.png", startingX, startingY - boardsize);
-            startingY -= boardsize;
+            if (Tile.Matrix[startingY / boardsize - 1][startingX / boardsize])
+            {
+                startingY -= boardsize;
+            }
+            foxDraw.AddImage("./Assets/hero-up.png", startingX, startingY);
         }
         public static void HeroLeft(FoxDraw foxDraw)
         {
-            foxDraw.AddImage("./Assets/hero-left.png", startingX - boardsize, startingY);
-            startingX -= boardsize;
+            if (Tile.Matrix[startingY / boardsize][startingX / boardsize -1])
+            {
+                startingX -= boardsize;
+            }
+            foxDraw.AddImage("./Assets/hero-left.png", startingX, startingY);
         }
         public static void HeroRight(FoxDraw foxDraw)
         {
-            foxDraw.AddImage("./Assets/hero-right.png", startingX + boardsize, startingY);
-            startingX += boardsize;
+            if (Tile.Matrix[startingY / boardsize][startingX / boardsize + 1])
+            {
+                startingX += boardsize;
+            }
+            foxDraw.AddImage("./Assets/hero-right.png", startingX, startingY);
         }
     }
 }

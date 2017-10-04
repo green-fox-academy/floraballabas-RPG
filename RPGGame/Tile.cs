@@ -25,15 +25,22 @@ namespace RPGGame
             new bool[] { false, true, true, true, false, true, false, false, true, true, true, false },
             new bool[] { false,false,false,false,false,false,false,false,false,false,false,false }
         };
-        
+        public static List<bool[]> Matrix
+        {
+            get
+            {
+                return matrix;
+            }
+        }
+
         public static void DrawMap(FoxDraw foxDraw)
         {
             int y = 0;
             int x = 0;
-            for (int i = 0; i < matrix.Count; i++)
+            for (int i = 1; i < matrix.Count-1; i++)
             {
                 y = i * boardsize;
-                for (int j = 0; j < matrix.Count; j++)
+                for (int j = 1; j < matrix.Count-1; j++)
                 {
                     x = j * boardsize;
                     if (matrix[i][j] == true)
@@ -47,23 +54,9 @@ namespace RPGGame
                 }
             }
         }
-        public static bool IsWalkable()
-        {
-            
-        }
-        //public static void DrawFloor(FoxDraw foxDraw)
+        //public static bool IsWalkable()
         //{
-        //    int y = 0;
-        //    int x = 0;
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        y = i * 50;
-        //        for (int j = 0; j < 10; j++)
-        //        {
-        //            x = j * 50;
-        //            foxDraw.AddImage("./Assets/floor.png", x, y);
-        //        }
-        //    }
+            
         //}
     }
 }

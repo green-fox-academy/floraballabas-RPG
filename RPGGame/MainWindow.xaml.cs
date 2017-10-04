@@ -34,24 +34,21 @@ namespace RPGGame
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {
             var foxDraw = new FoxDraw(canvas);
+            Tile.DrawMap(foxDraw);
             if (e.Key == Key.Left)
             {
-                Tile.DrawMap(foxDraw);
                 Hero.HeroLeft(foxDraw);
             }
             if (e.Key == Key.Right)
             {
-                Tile.DrawMap(foxDraw);
                 Hero.HeroRight(foxDraw);
             }
             if (e.Key == Key.Up)
             {
-                Tile.DrawMap(foxDraw);
                 Hero.HeroUp(foxDraw);
             }
             if (e.Key == Key.Down)
             {
-                Tile.DrawMap(foxDraw);
                 Hero.HeroDown(foxDraw);
             }
         }
