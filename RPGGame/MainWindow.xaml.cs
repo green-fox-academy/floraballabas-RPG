@@ -21,14 +21,16 @@ namespace RPGGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        Skeletons skeletons;
+
         public MainWindow()
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             Tile.DrawMap(foxDraw);
             Hero hero = new Hero(foxDraw);
-            Skeleton skeleton = new Skeleton();
-            Skeleton.PlaceEnemy(foxDraw);
+            skeletons = new Skeletons(foxDraw);
+            Boss boss = new Boss(foxDraw);
         }
         
         private void WindowKeyDown(object sender, KeyEventArgs e)

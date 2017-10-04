@@ -9,36 +9,30 @@ namespace RPGGame
 {
     class Skeleton : Enemy
     {
-        private static int startingX = 50;
-        private static int startingY = 50;
-        private static int boardsize = 50;
-        static Random rnd = new Random();
-
-        public Skeleton()
+        public Skeleton(FoxDraw foxDraw)
         {
-            int x = 1;
+            int number = 1;
             this.currentHP = maxHP;
-            this.maxHP = 2 * x * RollDice();
-            this.DP = 2 * x/2 * RollDice();
-            this.SP = 5 * x * RollDice();
+            this.maxHP = 2 * number * RollDice();
+            this.DP = 2 * number/2 * RollDice();
+            this.SP = 5 * number * RollDice();
         }
-        public static void PlaceEnemy(FoxDraw foxDraw)
+
+        public void PlaceEnemy(FoxDraw foxDraw, Random rnd, List<bool[]> matrixForSkeleton, int tilesize)
         {
-            int skeletonNumb = 0;
+            bool placingIsSuccesful = false;
             do
             {
                 int x = rnd.Next(1, 11);
                 int y = rnd.Next(1, 11);
-                if (Tile.Matrix[y][x] == true)
+                if (matrixForSkeleton[y][x] == true)
                 {
-                    foxDraw.AddImage("./Assets/skeleton.png", x*startingX, y*startingY);
-                    skeletonNumb++;
+                    placingIsSuccesful = true;
+                    foxDraw.AddImage("./Assets/skeleton.png", x * tilesize, y * tilesize);
+                    matrixForSkeleton[y][x] = false;
                 }
-            } while (skeletonNumb < 3);
 
-             //foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
-            //foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
-            //foxDraw.AddImage("./Assets/skeleton.png", startingX * rnd.Next(1, 11), startingY * rnd.Next(1, 11));
+            } while (!placingIsSuccesful);
         }
     }
 }
